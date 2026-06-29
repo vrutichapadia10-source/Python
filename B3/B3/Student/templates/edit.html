@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD</title>
+</head>
+
+<body>
+    <h1>Enter new student</h1>
+    <form method="post">
+        {% csrf_token %}
+        name: <input type="text" name='name', value={{stu.name}}>
+        score: <input type="number" name='score', value={{stu.score}}>
+        subject: <input type="text" name='sub', value={{stu.sub}}>
+
+        <input type="submit" value="edit">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>add</title>
+{% endblock title %}
+
+{% block body %}
+<h1>Add player</h1>
+<form method="post">
+    {% csrf_token %}
+    name:<input type="text" name="name" value="{{play.name}}"><br>
+    test_innings:<input type="text" name="test_innings" value="{{play.test_innings}}"><br>
+    runs:<input type="text" name="runs" value="{{play.runs}}">
+    <input type="submit" value="edit">
+</form>
+{% endblock body %}

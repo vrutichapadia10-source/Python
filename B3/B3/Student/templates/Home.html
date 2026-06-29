@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Home page </h1>
+    <table>
+        <thead>
+            <tr>
+                <td> Id </td>
+                <td> Name </td>
+                <td> Score </td>
+                <td> Subject </td>
+                <td> Update </td>
+                <td> Delete </td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td><a href="{% url 'info' i.id %}"> {{i.id}} </a></td>
+                <td>{{i.name}}</td>
+                <td>{{i.score}}</td>
+                <td>{{i.sub}}</td>
+                <td><a href="{% url 'edit' i.id %}"> Update </a></td>
+                <td><a href="{% url 'delete' i.id %}"> delete </a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add' %}">Add</a>
+</body>
+
+</html>
